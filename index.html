@@ -44,7 +44,6 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#studio" class="nav-link">Data Studio</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -82,8 +81,8 @@
             <a href="#projects" class="btn btn-primary">
               <i data-lucide="bar-chart-3"></i> View Projects Showcase
             </a>
-            <a href="#studio" class="btn btn-glow-violet">
-              <i data-lucide="terminal"></i> Open Live SQL Terminal
+            <a href="#experience" class="btn btn-outline">
+              <i data-lucide="briefcase"></i> Work Experience
             </a>
           </div>
 
@@ -277,21 +276,35 @@
     </div>
   </section>
 
-  <!-- Projects Showcase with Interactive Chart.js Visualizations -->
+  <!-- Projects Showcase with Advanced Interactive Animations -->
   <section class="section" id="projects">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Interactive Data Analytics <span class="gradient-text-cyan">Case Studies</span></h2>
         <p class="section-description">
-          Explore real interactive chart visualizations simulating the insights delivered in each project.
+          Explore real interactive chart visualizations with dynamic hover telemetry, live data scanlines, and 3D depth physics.
         </p>
+      </div>
+
+      <!-- Project Category Filter Bar -->
+      <div class="project-filter-bar">
+        <div class="project-category-tabs">
+          <button class="project-tab-btn active" data-project-filter="all"><i data-lucide="layers" style="font-size:0.85rem"></i> All Case Studies</button>
+          <button class="project-tab-btn" data-project-filter="ml"><i data-lucide="cpu" style="font-size:0.85rem"></i> Machine Learning</button>
+          <button class="project-tab-btn" data-project-filter="viz"><i data-lucide="bar-chart-2" style="font-size:0.85rem"></i> BI & Dashboards</button>
+          <button class="project-tab-btn" data-project-filter="analysis"><i data-lucide="table" style="font-size:0.85rem"></i> Excel & Modeling</button>
+        </div>
       </div>
 
       <div class="projects-grid">
 
         <!-- Project 1: Rainfall Prediction System -->
-        <div class="project-card" data-category="ml">
+        <div class="project-card tilt-card" data-category="ml">
           <div class="project-chart-wrapper">
+            <div class="chart-scanline"></div>
+            <div class="chart-telemetry-badge">
+              <span class="pulse-dot-green"></span> PIPELINE ACTIVE
+            </div>
             <canvas id="chart-rainfall"></canvas>
           </div>
           <div class="project-body">
@@ -316,8 +329,12 @@
         </div>
 
         <!-- Project 2: Top Indian Colleges Report -->
-        <div class="project-card" data-category="viz">
+        <div class="project-card tilt-card" data-category="viz">
           <div class="project-chart-wrapper">
+            <div class="chart-scanline"></div>
+            <div class="chart-telemetry-badge">
+              <span class="pulse-dot-green"></span> DAX MODEL SYNCED
+            </div>
             <canvas id="chart-colleges"></canvas>
           </div>
           <div class="project-body">
@@ -341,8 +358,12 @@
         </div>
 
         <!-- Project 3: COVID-19 Dashboard -->
-        <div class="project-card" data-category="viz">
+        <div class="project-card tilt-card" data-category="viz">
           <div class="project-chart-wrapper">
+            <div class="chart-scanline"></div>
+            <div class="chart-telemetry-badge">
+              <span class="pulse-dot-green"></span> TIME-SERIES LIVE
+            </div>
             <canvas id="chart-covid"></canvas>
           </div>
           <div class="project-body">
@@ -366,8 +387,12 @@
         </div>
 
         <!-- Project 4: Walmart Sales Analysis -->
-        <div class="project-card" data-category="analysis">
+        <div class="project-card tilt-card" data-category="analysis">
           <div class="project-chart-wrapper">
+            <div class="chart-scanline"></div>
+            <div class="chart-telemetry-badge">
+              <span class="pulse-dot-green"></span> POWER QUERY LOADED
+            </div>
             <canvas id="chart-walmart"></canvas>
           </div>
           <div class="project-body">
@@ -394,67 +419,7 @@
     </div>
   </section>
 
-  <!-- Interactive Data Studio & Live SQL/Python Simulator -->
-  <section class="section" id="studio">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Live Data Studio & <span class="gradient-text-cyan">SQL Simulator</span></h2>
-        <p class="section-description">
-          Click sample queries or write custom code to trigger live data calculations and responsive charts!
-        </p>
-      </div>
 
-      <div class="data-studio-container">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="terminal-title">
-            <i data-lucide="database"></i> abhiram@data-studio:~/analytics_sandbox
-          </div>
-          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan);">STATUS: ACTIVE</div>
-        </div>
-
-        <div class="terminal-grid">
-          <div class="terminal-editor">
-            <div class="query-presets">
-              <span class="preset-label">Select Sample Analytics Query:</span>
-              <div class="preset-btns">
-                <button class="preset-btn active" data-query="sql_sales">SQL: Regional Revenue</button>
-                <button class="preset-btn" data-query="python_ml">Python: Weather ML</button>
-                <button class="preset-btn" data-query="dax_colleges">DAX: Top Placements</button>
-              </div>
-            </div>
-
-            <textarea class="code-area" id="terminal-code" spellcheck="false">SELECT region, SUM(sales_amount) AS total_revenue 
-FROM bz_analytics_crm 
-WHERE year = 2026 
-GROUP BY region 
-ORDER BY total_revenue DESC;</textarea>
-
-            <div class="terminal-controls">
-              <span style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-mono);">Engine: SQLite / Python 3.11</span>
-              <button class="btn btn-primary" id="run-query-btn" style="padding:0.5rem 1.2rem; font-size:0.85rem;">
-                <i data-lucide="play"></i> Execute Query
-              </button>
-            </div>
-          </div>
-
-          <div class="terminal-results">
-            <div class="results-header">
-              <span><i data-lucide="line-chart"></i> EXECUTED RESULT OUTPUT</span>
-              <span id="execution-time" style="color:var(--accent-emerald);">0.042ms</span>
-            </div>
-            <div class="results-canvas-box">
-              <canvas id="terminal-result-chart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Work Experience Timeline -->
   <section class="section" id="experience">
@@ -645,7 +610,7 @@ ORDER BY total_revenue DESC;</textarea>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Abhiram M. Built with Advanced Data UI/UX Architecture.</p>
+      <p>© 2026 Abhiram M.</p>
     </div>
   </footer>
 
