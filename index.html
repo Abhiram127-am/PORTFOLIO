@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Abhiram M - Senior Data Analyst specializing in Business Intelligence, Predictive Machine Learning, Power BI DAX, and Data Storytelling.">
+  <meta name="keywords" content="Abhiram M, Data Analyst, Power BI, Tableau, Python, SQL, Scikit-Learn, XGBoost, Portfolio">
+  <title>Abhiram M | Senior Data Analyst & BI Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN for Interactive Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Interactive Node Graph Canvas Background -->
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- Ambient Light Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Header Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="logo-badge">AM</div>
+        <span>ABHIRAM <span class="gradient-text-cyan">M</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#studio" class="nav-link">Data Studio</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="open-resume-btn">
+          <i data-lucide="file-text"></i> Resume
+        </button>
+        <a href="#contact" class="btn btn-primary">
+          <i data-lucide="mail"></i> Hire Me
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text-cyan">Abhiram M</span><br>
+            <span class="typewriter-container">I build <span class="typewriter-text" id="typewriter"></span></span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Detail-oriented Data Analyst with expertise in converting raw multi-region datasets into predictive ML models, interactive Power BI dashboards, and actionable business intelligence strategies.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="bar-chart-3"></i> View Projects Showcase
+            </a>
+            <a href="#studio" class="btn btn-glow-violet">
+              <i data-lucide="terminal"></i> Open Live SQL Terminal
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <div class="metric-number" data-target="4">0</div>
+              <div class="metric-label">Production Analytics Projects</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-number">99.2%</div>
+              <div class="metric-label">ML Prediction Precision</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-number">IN & UAE</div>
+              <div class="metric-label">Cross-Border Business Data</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="portrait-wrapper">
+            <img src="assets/avatar.jpg" alt="Abhiram M Data Analyst" class="portrait-img">
+            
+            <!-- Floating Badge 1 -->
+            <div class="floating-badge badge-top-left">
+              <div class="badge-icon"><i data-lucide="database"></i></div>
+              <div class="badge-text">
+                <strong>ETL & Data Pipelines</strong>
+                <span>Python • Power Query • SQL</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-icon" style="color:#818CF8; background:rgba(129,140,248,0.15)"><i data-lucide="brain-circuit"></i></div>
+              <div class="badge-text">
+                <strong>Machine Learning</strong>
+                <span>Scikit-Learn • XGBoost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Turning Complex Data Into <span class="gradient-text-cyan">Strategic Action</span></h2>
+        <p class="section-description">
+          Bridging the gap between raw data engineering and executive business decision-making through statistical rigor and dynamic storytelling.
+        </p>
+      </div>
+
+      <div class="about-side-by-side">
+        <!-- Left Column: Interactive Storyteller Bio -->
+        <div class="about-bio-card tilt-card" id="bio-tilt-card">
+          <div class="bio-tabs-header">
+            <button class="bio-tab-btn active" data-tab="summary"><i data-lucide="file-text"></i> Executive Summary</button>
+            <button class="bio-tab-btn" data-tab="method"><i data-lucide="cpu"></i> ETL & ML Rigor</button>
+            <button class="bio-tab-btn" data-tab="impact"><i data-lucide="globe"></i> IN & UAE Impact</button>
+          </div>
+
+          <div class="bio-tab-content active" id="tab-summary">
+            <div class="bio-quote">
+              "Data isn't just rows and columns—it's the strategic narrative that steers high-stakes business decisions."
+            </div>
+            <p class="bio-paragraph">
+              Detail-oriented <strong>Data Analyst</strong> with hands-on experience applying statistical analysis, machine learning, and BI visualization to solve real business problems. Proficient in <strong>Python, SQL, Excel, Tableau, and Power BI</strong> for end-to-end data cleaning, predictive modeling, and executive reporting.
+            </p>
+            <p class="bio-paragraph">
+              With a background in Business Administration (BBA) and technical data science credentials, I bridge technical engineering with business leadership to turn complex data into clear, actionable growth insights.
+            </p>
+          </div>
+
+          <div class="bio-tab-content" id="tab-method">
+            <div class="bio-quote">
+              "Clean architecture precedes predictive precision."
+            </div>
+            <p class="bio-paragraph">
+              My analytical workflow begins with rigorous data preprocessing—using Python (Pandas/NumPy) and Excel Power Query to eliminate anomalies, handle missing values, and construct robust star-schema data models.
+            </p>
+            <p class="bio-paragraph">
+              I deploy advanced regression and classification algorithms (Scikit-Learn, XGBoost) with fine-tuned hyperparameters, ensuring high predictive accuracy and minimal error margins.
+            </p>
+          </div>
+
+          <div class="bio-tab-content" id="tab-impact">
+            <div class="bio-quote">
+              "Delivering cross-border analytics across Indian and UAE enterprise domains."
+            </div>
+            <p class="bio-paragraph">
+              At <strong>Bz Analytics Pvt Ltd (Kerala & UAE)</strong>, I spearheaded interactive Power BI dashboards for CRM and PPE analytics projects, embedding dashboards directly into Streamlit web apps for seamless stakeholder access.
+            </p>
+            <p class="bio-paragraph">
+              At <strong>Techolas Technologies</strong>, I built Tableau KPI monitoring tools and predictive ML models that streamlined reporting workflows and elevated visualization quality.
+            </p>
+          </div>
+
+          <!-- Live Counter Metrics Bar inside Left Card -->
+          <div class="bio-metrics-bar" id="bio-metrics-bar">
+            <div class="bio-metric">
+              <div><span class="bio-metric-num" data-count="50">0</span><span class="bio-metric-num">+</span></div>
+              <span class="bio-metric-lbl">Datasets Transformed</span>
+            </div>
+            <div class="bio-metric">
+              <div><span class="bio-metric-num" data-count="100">0</span><span class="bio-metric-num">%</span></div>
+              <span class="bio-metric-lbl">ETL Precision</span>
+            </div>
+            <div class="bio-metric">
+              <div><span class="bio-metric-num" data-count="15">0</span><span class="bio-metric-num">+</span></div>
+              <span class="bio-metric-lbl">DAX Measures</span>
+            </div>
+            <div class="bio-metric">
+              <div><span class="bio-metric-num" data-count="2">0</span></div>
+              <span class="bio-metric-lbl">Regions (IN & UAE)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive 3D Bento DNA Grid -->
+        <div class="about-bento-grid">
+          <div class="bento-card tilt-card" data-glow="cyan">
+            <div class="bento-icon"><i data-lucide="pie-chart"></i></div>
+            <div>
+              <h4 class="bento-title">BI & Visual Storytelling</h4>
+              <p class="bento-desc">Power BI DAX measures, Tableau time-series trendlines, and dynamic drill-through reports.</p>
+            </div>
+          </div>
+
+          <div class="bento-card tilt-card" data-glow="violet">
+            <div class="bento-icon" style="color:var(--accent-violet)"><i data-lucide="brain-circuit"></i></div>
+            <div>
+              <h4 class="bento-title">Predictive ML Modeling</h4>
+              <p class="bento-desc">Scikit-Learn, XGBoost regression & classification algorithms with hyperparameter tuning.</p>
+            </div>
+          </div>
+
+          <div class="bento-card tilt-card" data-glow="emerald">
+            <div class="bento-icon" style="color:var(--accent-emerald)"><i data-lucide="database"></i></div>
+            <div>
+              <h4 class="bento-title">ETL & Data Cleaning</h4>
+              <p class="bento-desc">Power Query, T-SQL, Pandas data wrangling, star-schema data modeling & automation.</p>
+            </div>
+          </div>
+
+          <div class="bento-card tilt-card" data-glow="cyan">
+            <div class="bento-icon" style="color:var(--accent-cyan)"><i data-lucide="trending-up"></i></div>
+            <div>
+              <h4 class="bento-title">Business Strategy</h4>
+              <p class="bento-desc">BBA background translating complex statistical outputs into strategic executive growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Core Skills & <span class="gradient-text-cyan">Proficiencies</span></h2>
+        <p class="section-description">
+          An interactive matrix of languages, visualization tools, machine learning libraries, and database technologies.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs & Live Search -->
+      <div class="skills-filter-bar">
+        <div class="skill-category-tabs">
+          <button class="tab-btn active" data-category="all">All Skills</button>
+          <button class="tab-btn" data-category="language">Languages</button>
+          <button class="tab-btn" data-category="viz">Visualization</button>
+          <button class="tab-btn" data-category="ml">ML & Data Science</button>
+          <button class="tab-btn" data-category="db">Databases & ETL</button>
+        </div>
+
+        <div class="skill-search-box">
+          <i data-lucide="search" class="skill-search-icon"></i>
+          <input type="text" class="skill-search-input" id="skill-search" placeholder="Search skill (e.g. DAX, Python, SQL)...">
+        </div>
+      </div>
+
+      <!-- Skills Grid Container -->
+      <div class="skills-grid" id="skills-grid">
+        <!-- Dynamically generated by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase with Interactive Chart.js Visualizations -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Interactive Data Analytics <span class="gradient-text-cyan">Case Studies</span></h2>
+        <p class="section-description">
+          Explore real interactive chart visualizations simulating the insights delivered in each project.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Rainfall Prediction System -->
+        <div class="project-card" data-category="ml">
+          <div class="project-chart-wrapper">
+            <canvas id="chart-rainfall"></canvas>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              Rainfall Prediction System
+              <i data-lucide="cloud-rain" style="color:var(--accent-cyan)"></i>
+            </div>
+            <div class="project-subtitle">Python • Scikit-Learn • XGBoost</div>
+            <ul class="project-bullets">
+              <li>Developed predictive ML models using historical weather dataset with extensive EDA & preprocessing.</li>
+              <li>Engineered features from temperature, humidity, and atmospheric pressure variables.</li>
+              <li>Benchmarked Random Forest vs. XGBoost models, achieving superior R² score and minimal MAE.</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">EDA</span>
+              <span class="tech-tag">Hyperparameter Tuning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Top Indian Colleges Report -->
+        <div class="project-card" data-category="viz">
+          <div class="project-chart-wrapper">
+            <canvas id="chart-colleges"></canvas>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              Top Indian Colleges Report
+              <i data-lucide="graduation-cap" style="color:var(--accent-violet)"></i>
+            </div>
+            <div class="project-subtitle">Power BI • DAX • Data Modeling</div>
+            <ul class="project-bullets">
+              <li>Built BI dashboards comparing national institutional rankings, placement stats, and fees.</li>
+              <li>Formulated custom DAX calculated columns and dynamic measures for multi-state slice & dice filtering.</li>
+              <li>Designed drill-through reports enabling stakeholders to compare colleges side-by-side.</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX Measures</span>
+              <span class="tech-tag">Star Schema</span>
+              <span class="tech-tag">Drill-Through BI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: COVID-19 Dashboard -->
+        <div class="project-card" data-category="viz">
+          <div class="project-chart-wrapper">
+            <canvas id="chart-covid"></canvas>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              COVID-19 Interactive Dashboard
+              <i data-lucide="activity" style="color:var(--accent-cyan)"></i>
+            </div>
+            <div class="project-subtitle">Tableau • Trend Analysis • Heat Maps</div>
+            <ul class="project-bullets">
+              <li>Architected an interactive Tableau dashboard visualizing pandemic case trends, recovery, and mortality KPIs.</li>
+              <li>Integrated time-series trend lines and geographic state-wise heat maps across India.</li>
+              <li>Automated data pipelines from public health repositories for continuous daily metric refreshes.</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Tableau</span>
+              <span class="tech-tag">Geographic Heatmaps</span>
+              <span class="tech-tag">KPI Dashboards</span>
+              <span class="tech-tag">Time-Series</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Walmart Sales Analysis -->
+        <div class="project-card" data-category="analysis">
+          <div class="project-chart-wrapper">
+            <canvas id="chart-walmart"></canvas>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              Walmart Retail Sales Analysis
+              <i data-lucide="shopping-cart" style="color:var(--accent-violet)"></i>
+            </div>
+            <div class="project-subtitle">Excel • Power Query • Pivot Modeling</div>
+            <ul class="project-bullets">
+              <li>Analyzed multi-store retail sales datasets to identify top product categories and peak revenue periods.</li>
+              <li>Leveraged Power Query for automated data cleaning, transformation, and multi-sheet consolidation.</li>
+              <li>Engineered interactive pivot charts and seasonal trend breakdown visualizations.</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">MS Excel</span>
+              <span class="tech-tag">Power Query</span>
+              <span class="tech-tag">Pivot Tables</span>
+              <span class="tech-tag">Sales Forecasting</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Data Studio & Live SQL/Python Simulator -->
+  <section class="section" id="studio">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Live Data Studio & <span class="gradient-text-cyan">SQL Simulator</span></h2>
+        <p class="section-description">
+          Click sample queries or write custom code to trigger live data calculations and responsive charts!
+        </p>
+      </div>
+
+      <div class="data-studio-container">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="terminal-title">
+            <i data-lucide="database"></i> abhiram@data-studio:~/analytics_sandbox
+          </div>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan);">STATUS: ACTIVE</div>
+        </div>
+
+        <div class="terminal-grid">
+          <div class="terminal-editor">
+            <div class="query-presets">
+              <span class="preset-label">Select Sample Analytics Query:</span>
+              <div class="preset-btns">
+                <button class="preset-btn active" data-query="sql_sales">SQL: Regional Revenue</button>
+                <button class="preset-btn" data-query="python_ml">Python: Weather ML</button>
+                <button class="preset-btn" data-query="dax_colleges">DAX: Top Placements</button>
+              </div>
+            </div>
+
+            <textarea class="code-area" id="terminal-code" spellcheck="false">SELECT region, SUM(sales_amount) AS total_revenue 
+FROM bz_analytics_crm 
+WHERE year = 2026 
+GROUP BY region 
+ORDER BY total_revenue DESC;</textarea>
+
+            <div class="terminal-controls">
+              <span style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-mono);">Engine: SQLite / Python 3.11</span>
+              <button class="btn btn-primary" id="run-query-btn" style="padding:0.5rem 1.2rem; font-size:0.85rem;">
+                <i data-lucide="play"></i> Execute Query
+              </button>
+            </div>
+          </div>
+
+          <div class="terminal-results">
+            <div class="results-header">
+              <span><i data-lucide="line-chart"></i> EXECUTED RESULT OUTPUT</span>
+              <span id="execution-time" style="color:var(--accent-emerald);">0.042ms</span>
+            </div>
+            <div class="results-canvas-box">
+              <canvas id="terminal-result-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Timeline -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Professional <span class="gradient-text-cyan">Experience</span></h2>
+        <p class="section-description">
+          Demonstrated track record of delivering business intelligence and data solutions for organizations in India and the UAE.
+        </p>
+      </div>
+
+      <div class="experience-parallel-grid">
+        <!-- Experience Item 1: Bz Analytics -->
+        <div class="experience-card tilt-card">
+          <div class="experience-card-header">
+            <div>
+              <div class="timeline-date">Nov 2025 – Feb 2026</div>
+              <h3 class="timeline-role">Data Analyst</h3>
+              <div class="timeline-company">Bz Analytics Pvt Ltd • Kerala, India & UAE</div>
+            </div>
+            <div class="cert-icon-badge" style="margin-bottom:0;"><i data-lucide="bar-chart-2"></i></div>
+          </div>
+
+          <ul class="project-bullets" style="margin-bottom:1.5rem; flex-grow:1;">
+            <li>Led development of interactive Power BI dashboards for CRM and PPE analytics projects, cleaning and structuring large datasets in Excel prior to transformation in Power Query.</li>
+            <li>Engineered advanced DAX calculations for custom metrics, supporting operational decision-making across cross-functional teams.</li>
+            <li>Embedded BI dashboards directly into Streamlit web applications, automating reporting workflows and elevating visualization clarity.</li>
+          </ul>
+
+          <div class="project-tech-tags">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">DAX</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">CRM Analytics</span>
+            <span class="tech-tag">UAE Business Data</span>
+          </div>
+        </div>
+
+        <!-- Experience Item 2: Techolas Technologies -->
+        <div class="experience-card tilt-card">
+          <div class="experience-card-header">
+            <div>
+              <div class="timeline-date">Jun 2024 – Jan 2025</div>
+              <h3 class="timeline-role">Data Analyst Intern</h3>
+              <div class="timeline-company">Techolas Technologies • Kochi, Kerala</div>
+            </div>
+            <div class="cert-icon-badge" style="margin-bottom:0; background:rgba(79,86,69,0.12); color:var(--accent-violet);"><i data-lucide="cpu"></i></div>
+          </div>
+
+          <ul class="project-bullets" style="margin-bottom:1.5rem; flex-grow:1;">
+            <li>Cleaned, transformed, and analyzed datasets using Python libraries including Pandas and NumPy.</li>
+            <li>Constructed regression and classification models using Scikit-Learn and XGBoost for predictive modeling tasks.</li>
+            <li>Designed Tableau and Power BI dashboards for executive KPI monitoring, trend analysis, and clear visual data storytelling.</li>
+          </ul>
+
+          <div class="project-tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">Tableau</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education & Certifications -->
+      <div style="margin-top: 3.5rem;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <h2 class="section-title">Education & <span class="gradient-text-cyan">Certifications</span></h2>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon-badge"><i data-lucide="graduation-cap"></i></div>
+            <div class="cert-title">Bachelor of Business Administration (BBA)</div>
+            <div class="cert-issuer">Pilathara Co-operative Arts & Science College • Kannur University</div>
+            <div class="cert-year">2019 – 2022</div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon-badge" style="background:rgba(56,189,248,0.15); color:var(--accent-cyan);"><i data-lucide="shield-check"></i></div>
+            <div class="cert-title">Data Analytics Professional Certification</div>
+            <div class="cert-issuer">Techolas Technologies, Kochi</div>
+            <div class="cert-year">2024</div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon-badge" style="background:rgba(52,211,153,0.15); color:var(--accent-emerald);"><i data-lucide="check-circle-2"></i></div>
+            <div class="cert-title">Data Analytics Essentials & NACTET</div>
+            <div class="cert-issuer">Cisco Networking Academy & NACTET</div>
+            <div class="cert-year">2024</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Let's Discuss <span class="gradient-text-cyan">Data Opportunities</span></h2>
+        <p class="section-description">
+          Open for full-time Data Analyst, BI Developer, and Machine Learning roles worldwide.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3 style="font-size:1.4rem; margin-bottom:1.5rem;" class="gradient-text-cyan">Contact Details</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i data-lucide="mail"></i></div>
+            <div>
+              <div class="contact-label">Email Address</div>
+              <a href="mailto:abhiramm872@gmail.com" class="contact-value">abhiramm872@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" style="color:var(--accent-emerald); border-color:rgba(52,211,153,0.3); background:rgba(52,211,153,0.1)"><i data-lucide="phone"></i></div>
+            <div>
+              <div class="contact-label">Phone Number</div>
+              <a href="tel:+917994656595" class="contact-value">+91 79946 56595</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" style="color:var(--accent-violet); border-color:rgba(129,140,248,0.3); background:rgba(129,140,248,0.1)"><i data-lucide="map-pin"></i></div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value" style="font-size:1rem;">Payyanur, Kerala, India</div>
+            </div>
+          </div>
+
+          <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border-glass);">
+            <button class="btn btn-outline" id="download-cv-btn" style="width:100%;">
+              <i data-lucide="download"></i> Download Official Resume (PDF)
+            </button>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully! Abhiram will get back to you shortly.');">
+          <h3 style="font-size:1.4rem; margin-bottom:1.5rem;">Send a Direct Message</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="form-name">Your Name</label>
+            <input type="text" id="form-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-email">Your Email</label>
+            <input type="email" id="form-email" class="form-input" placeholder="e.g. sarah@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-message">Message</label>
+            <textarea id="form-message" class="form-textarea" rows="4" placeholder="Hello Abhiram, we would love to invite you for an interview..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i data-lucide="send"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume PDF Viewer Modal -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title"><i data-lucide="file-text"></i> Abhiram M - Data Analyst Resume</div>
+        <div style="display:flex; gap:0.75rem; align-items:center;">
+          <a href="Abhiram_M_CV.pdf" download="Abhiram_M_CV.pdf" class="btn btn-primary" style="padding:0.35rem 0.9rem; font-size:0.8rem;">
+            <i data-lucide="download"></i> Download PDF
+          </a>
+          <button class="modal-close-btn" id="close-modal-btn">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe src="Abhiram_M_CV.pdf" class="modal-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Abhiram M. Built with Advanced Data UI/UX Architecture.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
