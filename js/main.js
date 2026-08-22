@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Initialize Chart.js Visualizations for Projects Showcase
   // --------------------------------------------------------------------------
   initProjectCharts();
+  initProjectFilters();
 
   // --------------------------------------------------------------------------
   // 6. Live Data Studio & SQL Playground Simulator
@@ -433,6 +434,42 @@ function initProjectCharts() {
       }
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE PROJECT CATEGORY FILTERING & ANIMATIONS
+   -------------------------------------------------------------------------- */
+function initProjectFilters() {
+  const filterBtns = document.querySelectorAll('.project-tab-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.projectFilter;
+
+      projectCards.forEach((card, index) => {
+        const category = card.dataset.category;
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1) translateY(0)';
+          }, index * 40);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.92) translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
 }
 
 /* --------------------------------------------------------------------------
